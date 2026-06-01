@@ -511,6 +511,22 @@ Scale = 1.5
 	]{วิธีทำ}%
 }
 
+\newcommand{\proof}{%
+	\tcbox[
+	enhanced,
+	on line,
+	arc=0pt,
+	outer arc=0pt,
+	colback=blue!5!white,      % สีพื้นหลังเป็นสีฟ้าอ่อนๆ ให้ดูสบายตา (หรือเปลี่ยนเป็น white ได้ครับ)
+	colframe=blue!60!black,    % สีเส้นขอบเป็นสีฟ้าเข้ม
+	fontupper=\bfseries,
+	coltext=blue!60!black,     % สีตัวหนังสือ "พิสูจน์" เป็นสีฟ้าเข้ม
+	boxrule=0.8pt,
+	left=4pt, right=4pt, top=2pt, bottom=2pt,
+	shadow={1mm}{-1mm}{0mm}{blue!20}, % เงาสีฟ้าจางๆ ให้เข้าธีมกัน
+	after={\hspace{0.5em}} 
+	]{พิสูจน์}%
+}
 % =========================
 % Solution Box
 % =========================
@@ -574,8 +590,8 @@ Scale = 1.5
 
 \newcommand{\remark}{\noindent\textbf{\textcolor{red}{หมายเหตุ}}\,\,}
 \newcommand{\observation}{\noindent\textbf{\textcolor{blue}{ข้อสังเกต}}\,\,}
-\definecolor{darkblue}{HTML}{004080} % กำหนดสีฟ้าเข้มเอง
-\newcommand{\proof}{\noindent\textbf{\textcolor{darkblue}{พิสูจน์:}}\,\,}
+%\definecolor{darkblue}{HTML}{004080} % กำหนดสีฟ้าเข้มเอง
+%\newcommand{\proof}{\noindent\textbf{\textcolor{darkblue}{พิสูจน์:}}\,\,}
 
 % ==========================================
 % เริ่มต้นเนื้อหาเอกสารหลัก
