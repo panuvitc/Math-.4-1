@@ -13,6 +13,8 @@
 \usepackage{xcolor}
 
 
+
+
 \usepackage[edges]{forest} % เพิ่ม [edges] เพื่อใช้การหักมุมเส้นแบบฉาก % แพ็กเกจสำหรับวาดแผนผังต้นไม้ที่ง่ายและสวยงาม
 
 % ----------  คำสั่งหารสั้น หารยาว ----------
@@ -59,16 +61,16 @@
 % ตั้งค่าฟอนต์ Mathematics
 %\usepackage{unicode-math}
 %\usepackage{gfsneohellenicot}
-%\usepackage{unicode-math} 
-%\setmainfont{GFS Neohellenic}[Scale=1.3]
-%\setmathfont{GFS Neohellenic Math}[Scale=1.3]
+\usepackage{unicode-math} 
+\setmainfont{GFS Neohellenic}[Scale=1.3]
+\setmathfont{GFS Neohellenic Math}[Scale=1.3]
 % ตั้งค่าฟอนต์หลักเป็น GFS Neohellenic สำหรับภาษาอังกฤษ
 
 
 
-\DeclareMathSizes{12}{14}{10}{7} % ใช้ปรับขนาดฟอนต์ Math
-\usepackage{concmath}
-\usepackage[OT1]{fontenc}
+%\DeclareMathSizes{12}{14}{10}{7} % ใช้ปรับขนาดฟอนต์ Math
+%\usepackage{concmath}
+%\usepackage[OT1]{fontenc}
 
 
 %\usepackage{pxfonts}
@@ -572,6 +574,9 @@ Scale = 1.5
 }
 
 \newcommand{\remark}{\noindent\textbf{\textcolor{red}{หมายเหตุ}}\,\,}
+\newcommand{\observation}{\noindent\textbf{\textcolor{blue}{ข้อสังเกต}}\,\,}
+\definecolor{darkblue}{HTML}{004080} % กำหนดสีฟ้าเข้มเอง
+\newcommand{\proof}{\noindent\textbf{\textcolor{darkblue}{พิสูจน์:}}\,\,}
 
 % ==========================================
 % เริ่มต้นเนื้อหาเอกสารหลัก
