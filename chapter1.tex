@@ -518,67 +518,73 @@
 \newpage
 
 \subsection*{การหารยาวพหุนาม (Polynomial Long Division)}
+
 \begin{observationbox}
 	จากทฤษฎีบท \ref{thm1} ถ้าให้
 	\[
-	a(x) = 2x^4 - x^3 + 2x^2 + x - 4
+	a(x)=2x^4-x^3+2x^2+x-4
 	\]
 	และ
 	\[
-	b(x) = x^2 - 2x - 1
+	b(x)=x^2-2x-1
 	\]
-	จะได้ว่า ผลหาร $q(x)$ เป็นพหุนามดีกรี $2$ และเศษเหลือ $r(x)$ เป็นพหุนามดีกรี $1$ หรือ $0$ หรือ $r(x) = 0$
-	\newline
+	จะได้ว่า ผลหาร $q(x)$ เป็นพหุนามดีกรี $2$ และเศษเหลือ $r(x)$ เป็นพหุนามดีกรี $1$ หรือ $0$ หรือ $r(x)=0$
+	
+	\medskip
+	
 	สมมติ
 	\[
-	q(x) = mx^2 + nx + c
+	q(x)=mx^2+nx+c
 	\]
 	และ
 	\[
-	r(x) = dx + e
+	r(x)=dx+e
 	\]
-	เมื่อ $m, \, n, \, c, \, d$ และ $e$ เป็นจำนวนจริง จากทฤษฎีบท \ref{thm1} จะได้ว่า
+	เมื่อ $m,n,c,d$ และ $e$ เป็นจำนวนจริง จากทฤษฎีบท \ref{thm1} จะได้ว่า
+	
 	\begin{align*}
-		2x^4 - x^3 + 2x^2 + x - 4
-		&= (x^2 - 2x - 1)(mx^2 + nx + c) + (dx + e) \\
-		&= mx^4 + (n - 2m)x^3 + (c - 2n - m)x^2 \\
-		&\quad + (-2c - n + d)x + (-c + e)
+		2x^4-x^3+2x^2+x-4
+		&=
+		(x^2-2x-1)(mx^2+nx+c)+(dx+e)
+		\\
+		&=
+		mx^4+(n-2m)x^3+(c-2n-m)x^2
+		\\
+		&\quad +(-2c-n+d)x+(-c+e)
 	\end{align*}
+	
 	ดังนั้น
 	\[
-	m = 2, \qquad n - 2m = -1, \qquad c - 2n - m = 2,
+	m=2,\quad n-2m=-1,\quad c-2n-m=2,
 	\]
 	\[
-	-2c - n + d = 1
+	-2c-n+d=1
+	\quad \text{และ} \quad
+	-c+e=-4
 	\]
-	และ
-	\[
-	-c + e = -4
-	\]
+	
 	นั่นคือ
 	\[
-	m = 2, \qquad n = 3, \qquad c = 10, \qquad d = 24
+	m=2,\quad n=3,\quad c=10,\quad d=24,\quad e=6
 	\]
-	และ
-	\[
-	e = 6
-	\]
+	
 	สรุปได้ว่า
 	\[
-	2x^4 - x^3 + 2x^2 + x - 4 = (x^2 - 2x - 1)(2x^2 + 3x + 10) + (24x + 6)
+	2x^4-x^3+2x^2+x-4
+	=
+	(x^2-2x-1)(2x^2+3x+10)+(24x+6)
 	\]
 \end{observationbox}
 
 \newpage
 จากการสมมติผลหารและเศษเหลือ แล้วหาผลคูณระหว่างตัวหารกับผลหาร จากนั้นนำไปบวกกับเศษเหลือ จะเขียนแสดงวิธีหาผลหารโดยการตั้งหารแบบหารยาวได้ดังนี้
 
-\[\begin{tabular}{r|l}
-	
+\[
+\begin{tabular}{r|l}
 	\cline{2-2}
-	
-	$x^2 - 2x - 1$ & $2x^4 - x^3 + 2x^2 + x - 4$ \\
-	
-\end{tabular}\]
+	$x^2 - 2x - 1$ & $\vphantom{\dfrac{1}{1}} 2x^4 - x^3 + 2x^2 + x - 4$ \\
+\end{tabular}
+\]
 
 \begin{conceptbox}
 	\begin{enumerate}
@@ -1482,27 +1488,48 @@
 
 ก่อนจะกล่าวถึงอสมการพหุนามตัวแปรเดียว จะนิยามสับเซตของเซตของจำนวนจริงซึ่งเรียกว่า \textbf{ช่วง (interval)} ดังนี้
 
-\vspace{1em}
-
 \begin{definitionbox}
 	ให้ $a$ และ $b$ เป็นจำนวนจริง ซึ่ง $a < b$
-	$$(a, b) \quad \text{หมายถึง เซต} \quad \{x \mid a < x < b\}$$
-	$$[a, b] \quad \text{หมายถึง เซต} \quad \{x \mid a \leq x \leq b\}$$
-	$$(a, b] \quad \text{หมายถึง เซต} \quad \{x \mid a < x \leq b\}$$
-	$$[a, b) \quad \text{หมายถึง เซต} \quad \{x \mid a \leq x < b\}$$
-	$$(a, \infty) \quad \text{หมายถึง เซต} \quad \{x \mid x > a\}$$
-	$$(-\infty, a) \quad \text{หมายถึง เซต} \quad \{x \mid x < a\}$$
-	$$[a, \infty) \quad \text{หมายถึง เซต} \quad \{x \mid x \geq a\}$$
-	$$(-\infty, a] \quad \text{หมายถึง เซต} \quad \{x \mid x \leq a\}$$
+	
+	\[
+	(a,b) \quad \text{หมายถึง เซต} \quad \{x \mid a < x < b\}
+	\]
+	
+	\[
+	[a,b] \quad \text{หมายถึง เซต} \quad \{x \mid a \leq x \leq b\}
+	\]
+	
+	\[
+	(a,b] \quad \text{หมายถึง เซต} \quad \{x \mid a < x \leq b\}
+	\]
+	
+	\[
+	[a,b) \quad \text{หมายถึง เซต} \quad \{x \mid a \leq x < b\}
+	\]
+	
+	\[
+	(a,\infty) \quad \text{หมายถึง เซต} \quad \{x \mid x > a\}
+	\]
+	
+	\[
+	(-\infty,a) \quad \text{หมายถึง เซต} \quad \{x \mid x < a\}
+	\]
+	
+	\[
+	[a,\infty) \quad \text{หมายถึง เซต} \quad \{x \mid x \geq a\}
+	\]
+	
+	\[
+	(-\infty,a] \quad \text{หมายถึง เซต} \quad \{x \mid x \leq a\}
+	\]
 \end{definitionbox}
 
-\vspace{0.5em}
 \remark อาจเขียนเซตของจำนวนจริงในรูปช่วงอนันต์ได้เป็น $(-\infty, \infty)$
 
 ตัวอย่างการเขียนกราฟของช่วงบนเส้นจำนวน
 \begin{figure}[H] 
 	\centering 
-	\includegraphics[scale=0.45]{1} 
+	\includegraphics[scale=0.35]{1} 
 	\caption{} 
 	\label{Figure1} 
 \end{figure}
@@ -1719,7 +1746,7 @@ $$2x < 8, \quad x^2 \geq 0, \quad x^2 + 1 < 0$$
 \newpage
 \section{ค่าสัมบูรณ์}
 
-\begin{definitionbox}
+\begin{definitionbox}\label{definition1.6}
 	ให้ $a$ เป็นจำนวนจริง \textbf{ค่าสัมบูรณ์ (absolute value)} ของจำนวนจริง $a$ เขียนแทนด้วยสัญลักษณ์ $|a|$ โดยที่
 	$$|a| = \begin{cases}
 		a & \text{เมื่อ } a \geq 0 \\
@@ -1753,35 +1780,68 @@ $$2x < 8, \quad x^2 \geq 0, \quad x^2 + 1 < 0$$
 
 \newpage
 \begin{examplebox}
-ให้ $x$ เป็นจำนวนจริง จงแสดงว่า 
-\[|x|=|-x|\]	
+	ให้ $x$ เป็นจำนวนจริง จงแสดงว่า 
+	\[
+	|x| = |-x|
+	\]
 \end{examplebox}
+
 \proof
 
-\textbf{กรณีที่ 1:} เมื่อ $x > 0$ 
-\\
-จากบทนิยาม จะได้ 
-$$|x| = x$$
-และเมื่อ $x > 0$ จะได้ $-x < 0$ จากบทนิยามของค่าสัมบูรณ์ในกรณีค่าติดลบ จึงได้ว่า
-$$|-x| = -(-x) = x$$
+\case เมื่อ $x > 0$
+
+จากบทนิยาม จะได้
+\[
+|x| = x
+\]
+
+และเมื่อ $x > 0$ จะได้ว่า $-x < 0$ จากบทนิยามของค่าสัมบูรณ์ในกรณีค่าติดลบ จึงได้ว่า
+
+\[
+|-x| = -(-x) = x
+\]
+
 ดังนั้น ในกรณีนี้จะได้ $|x| = |-x|$
 
-\textbf{กรณีที่ 2:} เมื่อ $x = 0$ 
-\\
-จากบทนิยาม จะได้ 
-$$|x| = 0 \quad \text{และ} \quad |-x| = |-0| = 0$$
-ดังนั้น ในกรณีนี้จะได้ $|x| = 0 = |-x|$
+\medskip
 
-\textbf{กรณีที่ 3:} เมื่อ $x < 0$ 
-\\
-จากบทนิยาม จะได้ 
-$$|x| = -x$$
-และเมื่อ $x < 0$ จะได้ $-x > 0$ จากบทนิยามของค่าสัมบูรณ์ในกรณีค่ามากกว่าหรือเท่ากับศูนย์ จึงได้ว่า
-$$|-x| = -x$$
+\case เมื่อ $x = 0$
+
+จากบทนิยาม จะได้
+
+\[
+|x| = 0
+\quad \text{และ} \quad
+|-x| = |-0| = 0
+\]
+
 ดังนั้น ในกรณีนี้จะได้ $|x| = |-x|$
 
-จากทั้งสามกรณี สรุปได้ว่า สำหรับทุกจำนวนจริง $x$ จะได้ว่า 
-$$|x| = |-x| \quad \text{เสมอ}$$
+\medskip
+
+\case เมื่อ $x < 0$
+
+จากบทนิยาม จะได้
+
+\[
+|x| = -x
+\]
+
+และเมื่อ $x < 0$ จะได้ว่า $-x > 0$ จากบทนิยามของค่าสัมบูรณ์ในกรณีค่ามากกว่าหรือเท่ากับศูนย์ จึงได้ว่า
+
+\[
+|-x| = -x
+\]
+
+ดังนั้น ในกรณีนี้จะได้ $|x| = |-x|$
+
+\medskip
+
+จากทั้งสามกรณี สรุปได้ว่า สำหรับทุกจำนวนจริง $x$ จะได้ว่า
+
+\[
+|x| = |-x| \quad \text{เสมอ}
+\]
 
 \begin{examplebox}
 ให้ $x$ และ $y$ เป็นจำนวนจริง จงแสดงว่า 
@@ -1961,99 +2021,145 @@ $$
 
 \begin{conceptbox}\label{concept1.8}
 	\begin{itemize}
-	\item อสมการ $|x| < a$ หมายถึง จุดที่แทน $x$ อยู่ห่างจากจุดที่แทน $0$ น้อยกว่า $a$ หน่วย 
-	\\
-	นั่นคือ $|x| < a$ มีความหมายตรงกับอสมการ $$-a < x \quad \text{และ} \quad x < a$$ ซึ่งเขียนรวมเป็น $$-a < x < a$$
-	\item อสมการ $|x| \leq a$ หมายถึง จุดที่แทน $x$ อยู่ห่างจากจุดที่แทน $0$ น้อยกว่าหรือเท่ากับ $a$ หน่วย 
-	\\
-	นั่นคือ $|x| \leq a$ มีความหมายตรงกับอสมการ $$-a \leq x \quad \text{และ} \quad x \leq a$$ ซึ่งเขียนรวมเป็น $$-a \leq x \leq a$$
-\end{itemize}
+		\item อสมการ $|x| < a$ หมายถึง จุดที่แทน $x$ อยู่ห่างจากจุดที่แทน $0$ น้อยกว่า $a$ หน่วย
+		
+		นั่นคือ $|x| < a$ มีความหมายตรงกับอสมการ
+		\[
+		-a < x \quad \text{และ} \quad x < a
+		\]
+		ซึ่งเขียนรวมเป็น
+		\[
+		-a < x < a
+		\]
+		
+		\item อสมการ $|x| \leq a$ หมายถึง จุดที่แทน $x$ อยู่ห่างจากจุดที่แทน $0$ น้อยกว่าหรือเท่ากับ $a$ หน่วย
+		
+		นั่นคือ $|x| \leq a$ มีความหมายตรงกับอสมการ
+		\[
+		-a \leq x \quad \text{และ} \quad x \leq a
+		\]
+		ซึ่งเขียนรวมเป็น
+		\[
+		-a \leq x \leq a
+		\]
+	\end{itemize}
 \end{conceptbox}
 
 \newpage
 \begin{examplebox}
-	เมื่อ $a = 2$ 
-	\\
+	เมื่อ $a = 2$
+	
 	จาก $|x| < 2$ จุดที่แทน $x$ แสดงบนเส้นจำนวนได้ดังนี้
-	\begin{figure}[H] 
-		\centering 
-		\includegraphics[scale=0.45]{5} 
-		\caption{กราฟแสดงเซตคำตอบของอสมการ $|x| < 2$} 
-		\label{Figure5} 
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.45]{5}
+		\caption{กราฟแสดงเซตคำตอบของอสมการ $|x| < 2$}
+		\label{Figure5}
 	\end{figure}
 	
-	\noindent ซึ่งมีความหมายเหมือนกับ $-2 < x < 2$ 
-	\\
-	ดังนั้น เซตคำตอบของ $|x| < 2$ คือ 
-	$$\{x \mid -2 < x < 2\} \quad \text{หรือ} \quad (-2, \; 2)$$
+	ซึ่งมีความหมายเหมือนกับ $-2 < x < 2$
 	
-	\vspace{1.5em}
+	ดังนั้น เซตคำตอบของ $|x| < 2$ คือ
+	
+	\[
+	\{x \mid -2 < x < 2\} \quad \text{หรือ} \quad (-2,2)
+	\]
+	
+	\medskip
+	
 	จาก $|x| \leq 2$ จุดที่แทน $x$ แสดงบนเส้นจำนวนได้ดังนี้
-	\begin{figure}[H] 
-		\centering 
-		\includegraphics[scale=0.45]{6} 
-		\caption{กราฟแสดงเซตคำตอบของอสมการ $|x| \leq 2$} 
-		\label{Figure6} 
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.45]{6}
+		\caption{กราฟแสดงเซตคำตอบของอสมการ $|x| \leq 2$}
+		\label{Figure6}
 	\end{figure}
 	
-	\noindent ซึ่งมีความหมายเหมือนกับ $-2 \leq x \leq 2$ 
-	\\
-	ดังนั้น เซตคำตอบของ $|x| \leq 2$ คือ 
-	$$\{x \mid -2 \leq x \leq 2\} \quad \text{หรือ} \quad [-2, \; 2]$$
+	ซึ่งมีความหมายเหมือนกับ $-2 \leq x \leq 2$
+	
+	ดังนั้น เซตคำตอบของ $|x| \leq 2$ คือ
+	
+	\[
+	\{x \mid -2 \leq x \leq 2\} \quad \text{หรือ} \quad [-2,2]
+	\]
 \end{examplebox}
 
 \newpage
 \begin{conceptbox}\label{concept1.9}
 	\begin{itemize}
-	\item อสมการ $|x| > a$ หมายถึง จุดที่แทน $x$ อยู่ห่างจากจุดที่แทน $0$ มากกว่า $a$ หน่วย 
-	\\
-	นั่นคือ $|x| > a$ มีความหมายตรงกับอสมการ $$x < -a \quad \text{หรือ} \quad x > a$$
-	\item อสมการ $|x| \geq a$ หมายถึง จุดที่แทน $x$ อยู่ห่างจากจุดที่แทน $0$ มากกว่าหรือเท่ากับ $a$ หน่วย 
-	\\
-	นั่นคือ $|x| \geq a$ มีความหมายตรงกับอสมการ $$x \leq -a \quad \text{หรือ} \quad x \geq a$$
-\end{itemize}
+		\item อสมการ $|x| > a$ หมายถึง จุดที่แทน $x$ อยู่ห่างจากจุดที่แทน $0$ มากกว่า $a$ หน่วย
+		
+		นั่นคือ $|x| > a$ มีความหมายตรงกับอสมการ
+		\[
+		x < -a \quad \text{หรือ} \quad x > a
+		\]
+		
+		\item อสมการ $|x| \geq a$ หมายถึง จุดที่แทน $x$ อยู่ห่างจากจุดที่แทน $0$ มากกว่าหรือเท่ากับ $a$ หน่วย
+		
+		นั่นคือ $|x| \geq a$ มีความหมายตรงกับอสมการ
+		\[
+		x \leq -a \quad \text{หรือ} \quad x \geq a
+		\]
+	\end{itemize}
 \end{conceptbox}
 
 \newpage
+
 \begin{examplebox}
-เมื่อ $a = 3$ 
-\\
-จาก $|x| > 3$ จุดที่แทน $x$ แสดงบนเส้นจำนวนได้ดังนี้
-\begin{figure}[H] 
-	\centering 
-	\includegraphics[scale=0.45]{7} 
-	\caption{กราฟแสดงเซตคำตอบของอสมการ $|x| > 3$} 
-	\label{Figure7} 
-\end{figure}
-
-\noindent ซึ่งมีความหมายเหมือนกับ $x < -3$ หรือ $x > 3$ 
-\\
-ดังนั้น เซตคำตอบของ $|x| > 3$ คือ 
-$$\{x \mid x < -3 \;\; \text{หรือ} \;\; x > 3\} \quad \text{หรือ} \quad (-\infty, \; -3) \cup (3, \; \infty)$$
-
-\vspace{1.5em}
-จาก $|x| \geq 3$ จุดที่แทน $x$ แสดงบนเส้นจำนวนได้ดังนี้
-\begin{figure}[H] 
-	\centering 
-	\includegraphics[scale=0.45]{8} 
-	\caption{กราฟแสดงเซตคำตอบของอสมการ $|x| \geq 3$} 
-	\label{Figure8} 
-\end{figure}
-\noindent ซึ่งมีความหมายเหมือนกับ $x \leq -3$ หรือ $x \geq 3$ 
-\\
-ดังนั้น เซตคำตอบของ $|x| \geq 3$ คือ 
-$$\{x \mid x \leq -3 \;\; \text{หรือ} \;\; x \geq 3\} \quad \text{หรือ} \quad (-\infty, \; -3] \cup [3, \; \infty)$$
+	เมื่อ $a = 3$
+	
+	จาก $|x| > 3$ จุดที่แทน $x$ แสดงบนเส้นจำนวนได้ดังนี้
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.45]{7}
+		\caption{กราฟแสดงเซตคำตอบของอสมการ $|x| > 3$}
+		\label{Figure7}
+	\end{figure}
+	
+	ซึ่งมีความหมายเหมือนกับ $x < -3$ หรือ $x > 3$
+	
+	ดังนั้น เซตคำตอบของ $|x| > 3$ คือ
+	
+	\[
+	\{x \mid x < -3 \;\text{หรือ}\; x > 3\}
+	\quad \text{หรือ} \quad
+	(-\infty,-3)\cup(3,\infty)
+	\]
+	
+	\medskip
+	
+	จาก $|x| \geq 3$ จุดที่แทน $x$ แสดงบนเส้นจำนวนได้ดังนี้
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.45]{8}
+		\caption{กราฟแสดงเซตคำตอบของอสมการ $|x| \geq 3$}
+		\label{Figure8}
+	\end{figure}
+	
+	ซึ่งมีความหมายเหมือนกับ $x \leq -3$ หรือ $x \geq 3$
+	
+	ดังนั้น เซตคำตอบของ $|x| \geq 3$ คือ
+	
+	\[
+	\{x \mid x \leq -3 \;\text{หรือ}\; x \geq 3\}
+	\quad \text{หรือ} \quad
+	(-\infty,-3] \cup [3,\infty)
+	\]
 \end{examplebox}
 \newpage
 จากที่กล่าวมา สามารถสรุปเป็นทฤษฎีบทได้ดังนี้
 
 \begin{theorembox}
-ให้ $a$ เป็นจำนวนจริงบวก
+	ให้ $a$ เป็นจำนวนจริงบวก
 	\begin{enumerate}
 		\item $\left|x\right|<a$ ก็ต่อเมื่อ $-a<x<a$
 		\item $\left|x\right| \leq a$ ก็ต่อเมื่อ $-a \leq x \leq a$
 		\item $\left|x\right|>a$ ก็ต่อเมื่อ $x<-a$ หรือ $x>a$
-		\item $\left|x\right| \geq a$ ก็ต่อเมื่อ $x \leq-a$ หรือ $x \geq a$
+		\item $\left|x\right| \geq a$ ก็ต่อเมื่อ $x \leq -a$ หรือ $x \geq a$
 	\end{enumerate}
 \end{theorembox}
 
