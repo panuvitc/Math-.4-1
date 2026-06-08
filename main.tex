@@ -1,3 +1,4 @@
+%\documentclass[a4paper,oneside,12pt,draft]{book} % ไม่เอาภาพ
 \documentclass[a4paper,oneside,12pt]{book}
 \usepackage{geometry}
 \geometry{top=15mm, left=10mm, right=10mm, bottom=15mm}
@@ -11,8 +12,6 @@
 \usepackage{tikz}
 \usepackage{titlesec}
 \usepackage{xcolor}
-
-
 
 
 \usepackage[edges]{forest} % เพิ่ม [edges] เพื่อใช้การหักมุมเส้นแบบฉาก % แพ็กเกจสำหรับวาดแผนผังต้นไม้ที่ง่ายและสวยงาม
@@ -60,16 +59,16 @@
 % ตั้งค่าฟอนต์ Mathematics
 %\usepackage{unicode-math}
 %\usepackage{gfsneohellenicot}
-\usepackage{unicode-math} 
-\setmainfont{GFS Neohellenic}[Scale=1.3]
-\setmathfont{GFS Neohellenic Math}[Scale=1.3]
+%\usepackage{unicode-math} 
+%\setmainfont{GFS Neohellenic}[Scale=1.3]
+%\setmathfont{GFS Neohellenic Math}[Scale=1.3]
 % ตั้งค่าฟอนต์หลักเป็น GFS Neohellenic สำหรับภาษาอังกฤษ
 
 
 
-%\DeclareMathSizes{12}{14}{10}{7} % ใช้ปรับขนาดฟอนต์ Math
-%\usepackage{concmath}
-%\usepackage[OT1]{fontenc}
+\DeclareMathSizes{12}{14}{10}{7} % ใช้ปรับขนาดฟอนต์ Math
+\usepackage{concmath}
+\usepackage[OT1]{fontenc}
 
 
 %\usepackage{pxfonts}
@@ -82,6 +81,31 @@
 \DeclareMathOperator{\cosec}{cosec}
 
 
+% --- ส่วนตั้งค่าคำสั่งสำหรับ Case ---
+\newcounter{casecounter}
+\newcounter{subcasecounter}[casecounter]
+
+% ตั้งค่าการแสดงผลตัวเลข
+\renewcommand{\thecasecounter}{\arabic{casecounter}}
+\renewcommand{\thesubcasecounter}{\thecasecounter.\arabic{subcasecounter}}
+
+% คำสั่ง \case (ตัวหนาปกติ)
+\newcommand{\case}{%
+	\stepcounter{casecounter}%
+	\par\vspace{0.5em}\noindent\textbf{\underline{กรณีที่ \thecasecounter}:}\,
+}
+
+% คำสั่ง \subcase (ตัวเอียง)
+\newcommand{\subcase}{%
+	\stepcounter{subcasecounter}%
+	\par\noindent\hspace{2em}\textit{\textbf{กรณีย่อยที่ \thesubcasecounter:}}\,
+}
+
+% คำสั่ง \newcase เพื่อรีเซ็ตเลขกรณีให้เริ่ม 1 ใหม่
+\newcommand{\newcase}{%
+	\setcounter{casecounter}{0}%
+	\setcounter{subcasecounter}{0}%
+}
 
 %\setdefaultlanguage{thai}
 %\setotherlanguage{english}
@@ -678,7 +702,7 @@ Scale = 1.5
 
 เอกสารฉบับนี้จัดทำและออกแบบด้วยโปรแกรม \LaTeX{} โดยอ้างอิงโครงสร้างเนื้อหาจากหนังสือเรียนของ สสวท. และปรับรูปแบบการนำเสนอให้เหมาะสมกับการใช้งานของครูผู้สอน พร้อมเว้นพื้นที่สำหรับการอธิบายเนื้อหา การแสดงวิธีทำตัวอย่าง และการบันทึกแนวคิดเพิ่มเติมระหว่างการสอน
 
-ผู้จัดทำขอขอบพระคุณสถาบันส่งเสริมการสอนวิทยาศาสตร์และเทคโนโลยี (สสวท.) ในฐานะแหล่งอ้างอิงหลักของเนื้อหา และหวังเป็นอย่างยิ่งว่าเอกสารฉบับนี้จะเป็นประโยชน์ต่อการจัดกิจกรรมการเรียนรู้และช่วยส่งเสริมความเข้าใจในเรื่องฟังก์ชันตรีโกณมิติของนักเรียนได้เป็นอย่างดี
+ผู้จัดทำขอขอบพระคุณสถาบันส่งเสริมการสอนวิทยาศาสตร์และเทคโนโลยี (สสวท.) ในฐานะแหล่งอ้างอิงหลักของเนื้อหา และหวังเป็นอย่างยิ่งว่าเอกสารฉบับนี้จะเป็นประโยชน์ต่อการจัดกิจกรรมการเรียนรู้และช่วยส่งเสริมความเข้าใจในเรื่องจำนวนจริงของนักเรียนได้เป็นอย่างดี
 
 \vspace{1.5cm}
 \begin{flushright}
